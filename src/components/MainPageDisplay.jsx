@@ -1,7 +1,11 @@
 import React from 'react'
 import { Grid, Image, Statistic, Icon, Button } from 'semantic-ui-react'
+import { useDispatch } from 'react-redux'
 
 const MainPageDisplay = () => {
+  const dispatch = useDispatch()
+
+
   return (
     <Grid celled='internally'>
       <Grid.Row>
@@ -31,16 +35,19 @@ const MainPageDisplay = () => {
           <Image src='./img/wecare_logo.png' />
         </Grid.Column>
         <Grid.Column width={10}>
-          <Button
+          {/* <Button
             data-cy='register-btn'
             primary
             size='small'
             circular
             position='centered'
             color='#e5a4cb'
+            onClick={() => 
+              dispatch ({ type: 'REGISTRATION_FORM', payload: {openModal: true}})
+            }
           >
             Register Here
-          </Button>
+          </Button> */}
           <Button
             secondary
             circular
