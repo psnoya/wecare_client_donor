@@ -7,15 +7,8 @@ import MainPageDisplay from './components/MainPageDisplay'
 const App = () => {
   
   return (
-    <>
-      <div
-        style={{
-          background: 'url("./img/weCareBackground.jpeg")',
-          backgroundSize: "cover",
-          height: "120vh",
-      }}
-      >
-      </div>      
+    <>    
+   
       <MenuHeader />
       <MainPageDisplay />
       <Footer />

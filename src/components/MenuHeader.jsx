@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu, Segment, Button, Icon } from 'semantic-ui-react'
+import { Menu, Segment } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 const MenuHeader = () => {
