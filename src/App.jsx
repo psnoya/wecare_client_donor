@@ -4,6 +4,7 @@ import MenuHeader from './components/MenuHeader'
 import Footer from './components/Footer'
 // import "semantic-ui-css/semantic.min.css";
 import "./index.css";
+import MainPageDisplay from './components/MainPageDisplay'
 
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
     <>
       <MenuHeader 
       />
+      <MainPageDisplay />
       <h1>{message}</h1>
       <Footer 
       color='#ebd2be'/>
