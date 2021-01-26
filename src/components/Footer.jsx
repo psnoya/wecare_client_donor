@@ -1,13 +1,8 @@
 import React from 'react'
 
-
 const Footer = () => (
   <footer>
-<p  
-id='footer'
-> weCare Food-bag Charity
-</p>
-
+    <p> weCare Food-bag Charity</p>
   </footer>
 )
 
