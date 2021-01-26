@@ -10,10 +10,6 @@ const MenuHeader = () => {
           <h1>MenuHeaderLogo</h1>
         </Menu.Item>
         <Menu.Item position='right'>
-          <Button icon labelPosition='left' data-cy='login-btn'>
-            <Icon name='user'></Icon>
-            Login
-          </Button>
         </Menu.Item>
       </Menu>
     </Segment>
