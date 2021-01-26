@@ -32,6 +32,7 @@ const MainPageDisplay = () => {
         </Grid.Column>
         <Grid.Column width={10}>
           <Button
+            data-cy='register-btn'
             primary
             size='small'
             circular
