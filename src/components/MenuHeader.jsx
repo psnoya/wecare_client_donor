@@ -15,7 +15,6 @@ const MenuHeader = () => {
           <Button
             icon
             labelPosition="left"
-            icon="user"
             data-cy="login-btn"
           >
             <Icon name="user"></Icon>
