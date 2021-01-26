@@ -6,7 +6,8 @@ const MenuHeader = () => {
 
   return (
     <Segment inverted>
-      <Menu inverted>
+      <Menu inverted
+      >
         <Menu.Item as={Link} to={{ pathname: "/" }}>
           <h1>MenuHeaderLogo</h1>
         </Menu.Item>
@@ -15,7 +16,7 @@ const MenuHeader = () => {
             icon
             labelPosition="left"
             icon="user"
-            data-cy="login-btn"          
+            data-cy="login-btn"
           >
             <Icon name="user"></Icon>
             Login
