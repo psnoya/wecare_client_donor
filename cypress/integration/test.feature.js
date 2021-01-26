@@ -1,11 +1,8 @@
 describe('finds root', () => {
   beforeEach(() => {
-    cy.visit("/")
-    
-  });
-  
-  
+    cy.visit('/')
+  })
   it('finds root', () => {
-    expect("contain", "weCare")
-  });
+    expect('contain', 'weCare')
+  })
 })
