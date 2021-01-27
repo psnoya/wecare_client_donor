@@ -4,7 +4,6 @@ import JtockAuth from 'j-tockauth'
 const auth = new JtockAuth({
   host: process.env.REACT_APP_API_URL,
 })
-
 const signUp = async (event) => {
   try {
     event.preventDefault()
@@ -15,7 +14,7 @@ const signUp = async (event) => {
     })
     store.dispatch({
       type: 'SET_CURRENT_USER',
-      payload: response.data,
+      payload: response.data.data,
     })
     store.dispatch({ type: 'REGISTRATION_FORM', payload: { openModal: true } })
   } catch (error) {

@@ -5,8 +5,8 @@
     "email": "donor@donor.com",
     "provider": "email",
     "uid": "donor@donor.com",
-    "name": "donor",
+    "name": "user",
     "allow_password_change": false,
-    "role": "registered_donor"
+    "role": "donor"
   }
 }

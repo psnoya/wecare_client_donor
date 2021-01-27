@@ -5,8 +5,9 @@ import { signUp } from '../modules/Auth'
 
 const RegistrationForm = () => {
   const dispatch = useDispatch()
-  const { openModal } = useSelector((state) => state)
-  const { registerErrorMessage, modalOpen } = useSelector((state) => state)
+  const { registerErrorMessage, currentUser, openModal } = useSelector(
+    (state) => state
+  )
 
   return (
     <>
@@ -25,6 +26,7 @@ const RegistrationForm = () => {
         <Modal.Content>
           <Form data-cy='registration-form' onSubmit={(e) => signUp(e)}>
             <Form.Input
+              name='email'
               data-cy='email'
               icon='at'
               type='text'
@@ -33,6 +35,7 @@ const RegistrationForm = () => {
               iconPosition='left'
             />
             <Form.Input
+              name='password'
               data-cy='password'
               icon='key'
               type='password'
@@ -41,6 +44,7 @@ const RegistrationForm = () => {
               iconPosition='left'
             />
             <Form.Input
+              name='password_confirmation'
               data-cy='password-confirmation'
               icon='key'
               type='password'
@@ -53,7 +57,6 @@ const RegistrationForm = () => {
               data-cy='submit-btn'
               icon
               labelPosition='left'
-              onClick='{event => { submit(event)}'
             >
               <Icon name='user'></Icon>
               Submit
@@ -62,6 +65,11 @@ const RegistrationForm = () => {
               {registerErrorMessage && (
                 <Message data-cy='register-error-message' negative>
                   {registerErrorMessage}
+                </Message>
+              )}
+              {currentUser && (
+                <Message data-cy='header-user-email' positive>
+                  Welcome {currentUser.email}
                 </Message>
               )}
             </Modal.Description>

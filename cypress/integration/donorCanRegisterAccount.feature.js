@@ -11,7 +11,7 @@ describe('Donor can register an account', () => {
     })
     cy.route({
       method: 'GET',
-      url: 'http://localhost:3000/api/auth/validate_token',
+      url: 'http://localhost:3000/api/auth/validate_token/**',
       status: 200,
       response: 'fx:donor_can_register.json',
     })
@@ -24,11 +24,11 @@ describe('Donor can register an account', () => {
       cy.get("[data-cy='email']").type('donor@donor.com')
       cy.get("[data-cy='password']").type('123456')
       cy.get("[data-cy='password-confirmation']").type('123456')
+      cy.get("[data-cy='submit-btn']").click()
       cy.get("[data-cy='header-user-email']").should(
         'contain',
         'Welcome donor@donor.com'
       )
-      cy.get("[data-cy='submit-btn']").click()
       cy.get("[data-cy='register-btn']").should('not.be.visible')
     })
   })

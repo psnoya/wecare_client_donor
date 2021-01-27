@@ -1,12 +1,8 @@
 import React from 'react'
 import { Grid, Image, Statistic, Icon, Button } from 'semantic-ui-react'
-import { useDispatch } from 'react-redux'
 import RegistrationForm from './RegistrationForm'
 
 const MainPageDisplay = () => {
-  const dispatch = useDispatch()
-
-
   return (
     <Grid celled='internally'>
       <Grid.Row>
