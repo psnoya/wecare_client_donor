@@ -9,8 +9,7 @@ const MenuHeader = () => {
         <Menu.Item as={Link} to={{ pathname: '/' }}>
           <h1>MenuHeaderLogo</h1>
         </Menu.Item>
-        <Menu.Item position='right'>
-        </Menu.Item>
+        <Menu.Item position='right'></Menu.Item>
       </Menu>
     </Segment>
   )

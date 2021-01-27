@@ -5,10 +5,8 @@ import './index.css'
 import MainPageDisplay from './components/MainPageDisplay'
 
 const App = () => {
-  
   return (
-    <>    
-   
+    <>
       <MenuHeader />
       <MainPageDisplay />
       <Footer />
