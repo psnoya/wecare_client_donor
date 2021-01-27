@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "data": {
+    "id": 852,
+    "email": "donor@donor.com",
+    "provider": "email",
+    "uid": "donor@donor.com",
+    "name": "user",
+    "allow_password_change": false,
+    "role": "donor"
+  }
+}
