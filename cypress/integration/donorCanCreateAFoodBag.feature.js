@@ -20,9 +20,6 @@ describe('Donor can create a foodbag', () => {
     it('fills in form', () => {
       cy.get("[data-cy='foodbag-form']").within(() => {
       cy.get("[data-cy='number-of-bags']").type('5')
-      cy.get("[data-cy='pickup-time1']").click()
-      cy.get("[data-cy='pickup-time2']").click()
-      cy.get("[data-cy='pickup-time3']").click()
       cy.get("[data-cy='submit-btn']").contains("Donate").click()
 
       })

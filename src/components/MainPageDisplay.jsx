@@ -9,6 +9,7 @@ const MainPageDisplay = () => {
       <Grid.Row>
         <Grid.Column width={3}>
           <Image src='./img/wecare_logo.png' />
+          
         </Grid.Column>
         <Grid.Column width={10}>
           <p>

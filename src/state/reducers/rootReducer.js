@@ -17,6 +17,19 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         registerErrorMessage: action.payload,
       }
+    case 'SET_CREATE_FOODBAG_MESSAGE':
+      return {
+        ...state,
+        createFoodBagMessage: action.payload,
+        errorMessage: '',
+      }
+    case 'SET_ERROR_FOODBAG_MESSAGE':
+      return {
+        ...state,
+        errorMessage: action.payload,
+        createFoodBagMessage: '',
+      }
+
     default:
       return state
   }

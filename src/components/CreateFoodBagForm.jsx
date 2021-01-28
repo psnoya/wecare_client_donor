@@ -1,51 +1,36 @@
-import React from 'react'
-import { Button, Container, Form, Header, Input, Radio } from 'semantic-ui-react'
+import React, { useState } from 'react'
+import {
+  Button,
+  Container,
+  Form,
+  Header,
+  Icon,
+  Input,
+} from 'semantic-ui-react'
+import { useDispatch, useSelector } from 'react-redux'
+import FoodBagServices from '../modules/FoodBagServices'
 
 const CreateFoodBagForm = () => {
+  const dispatch = useDispatch()
+  const { createFoodBagMessage, errorMessage} = useSelector(state => state)
+  const [foodbag, setFoodbag] = useState()
+  
   return (
     <Container>
+      <Header>Create your FoodBag</Header>
       <Form data-cy='foodbag-form'>
         <Form.Field
           data-cy='number-of-bags'
-          label='Number of bags'
+          name="foodbag"
+          label='How many bags do you want to donate today?'
           placeholder='Number of bags'
           control={Input}
         />
-
-        <Form.Field>
-          <Header>Please select a pickup time</Header>
-          <Radio
-          data-cy='pickup-time1'
-            label='08-12'
-            name='radioGroup'
-            value=''
-            // checked={}
-          />
-        </Form.Field>
-        <Form.Field>
-          <Radio
-          data-cy='pickup-time2'
-            label='12-16'
-            name='radioGroup'
-            value=''
-            // checked={}
-          />
-        </Form.Field>
-        <Form.Field>
-          <Radio
-          data-cy='pickup-time3'
-            label='16-20'
-            name='radioGroup'
-            value=''
-            // checked={}
-          />
-        </Form.Field>
-        <Button 
-        data-cy='submit-btn'
-        type='submit'
-        icon="heart"
-        color="purple"
-        >Donate</Button>
+        <Button data-cy='submit-btn' type='submit' color='purple' icon='heart'>
+          <Icon name="heart"></Icon>
+          Donate
+        </Button>
+        {}
       </Form>
     </Container>
   )
