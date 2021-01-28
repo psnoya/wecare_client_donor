@@ -28,6 +28,9 @@ const CreateFoodBagForm = () => {
           label='How many bags do you want to donate today?'
           placeholder='Number of bags'
           control={Input}
+          type='number'
+          max={10}
+          min={1}
         />
         <Button data-cy='submit-btn' type='submit' color='purple' icon='heart'>
           <Icon name='heart'></Icon>

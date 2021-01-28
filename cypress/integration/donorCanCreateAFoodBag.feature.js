@@ -20,14 +20,34 @@ describe('Donor can create a foodbag', () => {
   describe('successfully', () => {
     it('fills in form', () => {
       cy.route({
-        method: "POST",
-        url: "http://localhost:3000/api/foodbags",
-        response: { message: "Your foodbag was successfully created!" },
+        method: 'POST',
+        url: 'http://localhost:3000/api/foodbags',
+        response: { message: 'Your foodbag was successfully created!' },
       })
       cy.get("[data-cy='foodbag-form']").within(() => {
-      cy.get("[data-cy='number-of-bags']").type('5')
-      cy.get("[data-cy='submit-btn']").contains("Donate").click()
-      cy.get("[data-cy='api-response-success-message']").should("contain", "Your foodbag was successfully created!" )
+        cy.get("[data-cy='number-of-bags']").type('5')
+        cy.get("[data-cy='submit-btn']").contains('Donate').click()
+        cy.get("[data-cy='api-response-success-message']").should(
+          'contain',
+          'Your foodbag was successfully created!'
+        )
+      })
+    })
+  })
+  describe('unsuccessfully', () => {
+    it('do not fills in number of foodbags', () => {
+      cy.route({
+        method: 'POST',
+        url: 'http://localhost:3000/api/foodbags',
+        response: { message: 'Your foodbag was not created!' },
+        status: 422
+      })
+      cy.get("[data-cy='foodbag-form']").within(() => {
+        cy.get("[data-cy='submit-btn']").contains('Donate').click()
+        cy.get("[data-cy='api-response-error-message']").should(
+          'contain',
+          'Your foodbag was not created!'
+        )
       })
     })
   })
