@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid, Image, Statistic, Icon, Button } from 'semantic-ui-react'
 import RegistrationForm from './RegistrationForm'
+import CreateFoodBagForm from './CreateFoodBagForm'
 
 const MainPageDisplay = () => {
   return (
@@ -42,6 +43,7 @@ const MainPageDisplay = () => {
           >
             Login Here
           </Button>
+          <CreateFoodBagForm />
         </Grid.Column>
         <Grid.Column width={3}>
           <Image src='./img/wecare_logo.png' />
