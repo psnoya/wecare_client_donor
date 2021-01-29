@@ -5,9 +5,13 @@ const FoodBagServices = {
     event.preventDefault()
     let headers = JSON.parse(localStorage.getItem('J-tockAuth-Storage'))
     try {
-      let response = await axios.post('/foodbags', {
-        headers: headers,
-      })
+      let response = await axios.post(
+        '/foodbags',
+        {
+          foodbag: { pickuptime: parseInt(event.target.pickuptime.value) },
+        },
+        { headers: headers }
+      )
       event.target.reset()
       dispatch({
         type: 'SET_CREATE_FOODBAG_MESSAGE',

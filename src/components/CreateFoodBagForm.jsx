@@ -19,13 +19,28 @@ const CreateFoodBagForm = () => {
       <Header>Create your FoodBag</Header>
       <Icon
         name='shopping bag'
-        size='massive'
+        size='small'
         style={{ marginTop: '0.1em', marginBottom: '0.2em' }}
       />
       <Form
         data-cy='foodbag-form'
         onSubmit={(event) => FoodBagServices.create(event, dispatch)}
       >
+        <Form.Field />
+        <Form.Field>
+          <label for='pickuptime'>Choose a Pickup Time:</label>
+          <select
+            name='pickuptime'
+            id='pickuptime'
+            data-cy='pickuptime-dropdown'
+          >
+            <option>Select Pickup Time</option>
+            <option value={0}>08-12</option>
+            <option value={1}>12-16</option>
+            <option value={2}>16-20</option>
+          </select>
+        </Form.Field>
+        <br /> <br />
         <Button data-cy='submit-btn' type='submit' color='purple' icon='heart'>
           <Icon name='heart'></Icon>
           Donate
