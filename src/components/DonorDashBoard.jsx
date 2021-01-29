@@ -1,8 +1,10 @@
 import React from 'react'
 import { Menu } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import CreateFoodBagForm from './CreateFoodBagForm'
 
-const SideBarMeny = () => {
+
+const DonorDashBoard = () => {
   return (
     <>
       <Menu secondary vertical>
@@ -14,8 +16,9 @@ const SideBarMeny = () => {
         />
         <Menu.Item></Menu.Item>
       </Menu>
+      <CreateFoodBagForm />
     </>
   )
 }
 
-export default SideBarMeny
+export default DonorDashBoard

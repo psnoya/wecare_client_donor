@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useState} from 'react'
 import { Form, Modal, Button, Icon, Message } from 'semantic-ui-react'
 import { useDispatch, useSelector } from 'react-redux'
 import { signUp } from '../modules/Auth'
+import DonorDashBoard from './DonorDashBoard'
 
 const RegistrationForm = () => {
   const dispatch = useDispatch()
-  const { registerErrorMessage, currentUser, openModal } = useSelector(
-    (state) => state
-  )
+  const { registerErrorMessage, currentUser, openModal } = useSelector((state) => state)
+    const [selectDonorDashBoard, setSelectDonorDashBoard] = useState(false);
+  
 
   return (
     <>
@@ -62,6 +63,7 @@ const RegistrationForm = () => {
               icon
               labelPosition='left'
             >
+              {selectDonorDashBoard && <DonorDashBoard />}
               <Icon name='user'></Icon>
               Submit
             </Button>
