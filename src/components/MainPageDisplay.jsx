@@ -10,7 +10,6 @@ const MainPageDisplay = () => {
       <Grid.Row>
         <Grid.Column width={3}>
           <SideBarMeny />
-          
         </Grid.Column>
         <Grid.Column width={10}>
           <p>
@@ -29,10 +28,8 @@ const MainPageDisplay = () => {
           </Statistic>
         </Grid.Column>
       </Grid.Row>
-
       <Grid.Row>
-        <Grid.Column width={3}>
-        </Grid.Column>
+        <Grid.Column width={3}></Grid.Column>
         <Grid.Column width={10}>
           <RegistrationForm />
           <Button
@@ -44,8 +41,7 @@ const MainPageDisplay = () => {
           >
             Login Here
           </Button>
-                  </Grid.Column>
-                
+        </Grid.Column>
         <Grid.Column width={3}>
           <Image src='./img/wecare_logo.png' />
         </Grid.Column>
