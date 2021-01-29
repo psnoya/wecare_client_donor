@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import MenuHeader from './components/MenuHeader'
 import Footer from './components/Footer'
 import './index.css'
@@ -7,9 +7,11 @@ import MainPageDisplay from './components/MainPageDisplay'
 const App = () => {
   return (
     <>
-      <MenuHeader />
-      <MainPageDisplay />
-      <Footer />
+      <Suspense fallback={<h3>Loading...</h3>}>
+        <MenuHeader />
+        <MainPageDisplay />
+        <Footer />
+      </Suspense>
     </>
   )
 }
