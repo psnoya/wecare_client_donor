@@ -20,7 +20,11 @@ const RegistrationForm = () => {
           dispatch({ type: 'REGISTRATION_FORM', payload: { openModal: true } })
         }
         open={openModal}
-        trigger={<Button data-cy='register-btn'>Register Button</Button>}
+        trigger={<Button data-cy='register-btn'
+        size="huge"
+        color="purple"
+        >
+          Register Here</Button>}
       >
         <Modal.Header>Register Account</Modal.Header>
         <Modal.Content>

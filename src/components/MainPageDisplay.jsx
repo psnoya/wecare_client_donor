@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid, Image, Statistic, Icon, Button } from 'semantic-ui-react'
 import RegistrationForm from './RegistrationForm'
+import SideBarMeny from './SideBarMeny'
 import CreateFoodBagForm from './CreateFoodBagForm'
 
 const MainPageDisplay = () => {
@@ -8,7 +9,7 @@ const MainPageDisplay = () => {
     <Grid celled='internally'>
       <Grid.Row>
         <Grid.Column width={3}>
-          <Image src='./img/wecare_logo.png' />
+          <SideBarMeny />
           
         </Grid.Column>
         <Grid.Column width={10}>
@@ -31,7 +32,6 @@ const MainPageDisplay = () => {
 
       <Grid.Row>
         <Grid.Column width={3}>
-          <Image src='./img/wecare_logo.png' />
         </Grid.Column>
         <Grid.Column width={10}>
           <RegistrationForm />
@@ -44,11 +44,14 @@ const MainPageDisplay = () => {
           >
             Login Here
           </Button>
-          <CreateFoodBagForm />
-        </Grid.Column>
+                  </Grid.Column>
+                
         <Grid.Column width={3}>
           <Image src='./img/wecare_logo.png' />
         </Grid.Column>
+      </Grid.Row>
+      <Grid.Row>
+        <CreateFoodBagForm />
       </Grid.Row>
     </Grid>
   )
