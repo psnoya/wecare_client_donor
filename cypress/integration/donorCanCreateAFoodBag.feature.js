@@ -26,9 +26,7 @@ describe('Donor can create a foodbag', () => {
       })
       cy.get("[data-cy='foodbag-form']").within(() => {
         cy.get("[data-cy='submit-btn']").contains('Donate').click()
-        cy.get("[data-cy='pickup-time1']").click()
-        cy.get("[data-cy='pickup-time2']").click()
-        cy.get("[data-cy='pickup-time3']").click()
+        cy.get('[data-cy="pickuptime-dropdown"]').select("12-16");
         cy.get("[data-cy='api-response-success-message']").should(
           'contain',
           'Your foodbag was successfully created!'

@@ -41,14 +41,13 @@ const MainPageDisplay = () => {
           >
             Login Here
           </Button>
+          <CreateFoodBagForm />
         </Grid.Column>
         <Grid.Column width={3}>
           <Image src='./img/wecare_logo.png' />
         </Grid.Column>
       </Grid.Row>
-      <Grid.Row>
-        <CreateFoodBagForm />
-      </Grid.Row>
+
     </Grid>
   )
 }

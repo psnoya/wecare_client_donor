@@ -29,30 +29,17 @@ const CreateFoodBagForm = () => {
       >
         <Form.Field label='Please select a pickup time' />
         <Form.Field>
-          <Radio
-            data-cy='pickup-time1'
-            label='08-12'
-            name='morning'
-            value='morning'
-            // checked={}
-            // onChange={}
-          />
-          <Radio
-            data-cy='pickup-time2'
-            label='12-16'
-            name='afternoon'
-            value='afternoon'
-            // checked={}
-            // onChange={}
-          />
-          <Radio
-            data-cy='pickup-time3'
-            label='16-20'
-            name='evening'
-            value='evening'
-            // checked={}
-            // onChange={}
-          />
+          <label for='pickuptime'>Choose a category:</label>
+          <select
+            name='pickuptime'
+            id='pickuptime'
+            data-cy='pickuptime-dropdown'
+          >
+            <option value={0}>Select Pickup Time</option>
+            <option value={1}>08-12</option>
+            <option value={2}>12-16</option>
+            <option value={3}>16-20</option>
+          </select>
         </Form.Field>
 
         <Button data-cy='submit-btn' type='submit' color='purple' icon='heart'>
@@ -61,19 +48,20 @@ const CreateFoodBagForm = () => {
         </Button>
         {createFoodBagMessage && (
           <Message
-            color='green'
+          color='green'
             size='big'
             data-cy='api-response-success-message'
-          >
-            {createFoodBagMessage}
+            >
+              {createFoodBagMessage}
           </Message>
         )}
         {errorMessage && (
-          <Message color='red' size='big' data-cy='api-response-error-message'>
+          <Message color='red' size='big' data-cy='api-response-error-message'
+          >
             {errorMessage}
           </Message>
         )}
-      </Form>
+        </Form>
     </Container>
   )
 }
