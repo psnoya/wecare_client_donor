@@ -47,7 +47,6 @@ const MainPageDisplay = () => {
           <Image src='./img/wecare_logo.png' />
         </Grid.Column>
       </Grid.Row>
-
     </Grid>
   )
 }
