@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Button,
   Container,
@@ -34,7 +34,7 @@ const CreateFoodBagForm = () => {
             id='pickuptime'
             data-cy='pickuptime-dropdown'
           >
-            <option value={3}>Select Pickup Time</option>
+            <option>Select Pickup Time</option>
             <option value={0}>08-12</option>
             <option value={1}>12-16</option>
             <option value={2}>16-20</option>
