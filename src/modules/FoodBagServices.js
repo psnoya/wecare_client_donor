@@ -8,7 +8,7 @@ const FoodBagServices = {
       let response = await axios.post(
         '/foodbags',
         {
-          foodbag: { pickuptime: parseInt(event.target.foodbags.value) },
+          foodbag: { pickuptime: parseInt(event.target.pickuptime.value) },
         },
         { headers: headers }
       )
