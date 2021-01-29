@@ -29,7 +29,7 @@ const CreateFoodBagForm = () => {
       >
         <Form.Field label='Please select a pickup time' />
         <Form.Field>
-          <label for='pickuptime'>Choose a category:</label>
+          <label for='pickuptime'>Choose a Pickup Time:</label>
           <select
             name='pickuptime'
             id='pickuptime'
