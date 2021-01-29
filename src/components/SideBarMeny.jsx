@@ -1,7 +1,6 @@
 import React from 'react'
 import { Menu } from 'semantic-ui-react'
-import { NavLink, Link } from 'react-router-dom'
-import CreateFoodBagForm from './CreateFoodBagForm'
+import { Link } from 'react-router-dom'
 
 const SideBarMeny = () => {
   return (
@@ -13,9 +12,7 @@ const SideBarMeny = () => {
           as={Link}
           to={{ pathname: '/foodbags' }}
         />
-        <Menu.Item>
-          
-        </Menu.Item>
+        <Menu.Item></Menu.Item>
       </Menu>
     </>
   )

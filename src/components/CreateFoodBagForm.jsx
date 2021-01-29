@@ -5,7 +5,6 @@ import {
   Form,
   Header,
   Icon,
-  Input,
   Message,
 } from 'semantic-ui-react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -18,20 +17,15 @@ const CreateFoodBagForm = () => {
   return (
     <Container>
       <Header>Create your FoodBag</Header>
+      <Icon
+        name='shopping bag'
+        size='massive'
+        style={{ marginTop: '0.1em', marginBottom: '0.2em' }}
+      />
       <Form
         data-cy='foodbag-form'
         onSubmit={(event) => FoodBagServices.create(event, dispatch)}
       >
-        <Form.Field
-          data-cy='number-of-bags'
-          name='foodbag'
-          label='How many bags do you want to donate today?'
-          placeholder='Number of bags'
-          control={Input}
-          type='number'
-          max={10}
-          min={1}
-        />
         <Button data-cy='submit-btn' type='submit' color='purple' icon='heart'>
           <Icon name='heart'></Icon>
           Donate
