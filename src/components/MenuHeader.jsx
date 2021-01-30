@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Image, Menu, Segment } from 'semantic-ui-react'
+import { Button, Image, Menu, Segment } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import RegistrationForm from './RegistrationForm'
 
@@ -14,6 +14,13 @@ const MenuHeader = () => {
         </Menu.Item>
         <Menu.Item position='right'>
           {!currentUser && <RegistrationForm />}
+          {currentUser && 
+          <Button 
+          color='violet'
+          >
+            Log out Dummy
+            </Button>
+            }
         </Menu.Item>
       </Menu>
     </Segment>
