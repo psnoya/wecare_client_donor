@@ -1,6 +1,7 @@
 import store from '../state/store/configureStore'
 import JtockAuth from 'j-tockauth'
 
+const LOCAL_STORAGE_KEY = "J-tockAuth-Storage"
 const auth = new JtockAuth({
   host: process.env.REACT_APP_API_URL,
 })
@@ -26,4 +27,4 @@ const signUp = async (event) => {
   }
 }
 
-export { signUp }
+export { signUp, LOCAL_STORAGE_KEY }
