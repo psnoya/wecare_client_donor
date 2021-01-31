@@ -23,6 +23,7 @@ const signUp = async (event) => {
       payload: credentials,
     })
     store.dispatch({ type: 'REGISTRATION_FORM', payload: { openModal: true } })
+    alert('Welcome!')
   } catch (error) {
     store.dispatch({
       type: 'REGISTER_ERROR_MESSAGE',
