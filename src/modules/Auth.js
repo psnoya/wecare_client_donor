@@ -3,9 +3,7 @@ import JtockAuth from 'j-tockauth'
 import axios from 'axios'
 
 const LOCAL_STORAGE_KEY = 'J-tockAuth-Storage'
-// const auth = new JtockAuth({
-//   host: process.env.REACT_APP_API_URL,
-// })
+
 const signUp = async event => {
   try {
     event.preventDefault()

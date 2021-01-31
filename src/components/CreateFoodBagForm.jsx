@@ -6,6 +6,7 @@ import {
   Header,
   Icon,
   Message,
+  Segment,
 } from 'semantic-ui-react'
 import { useDispatch, useSelector } from 'react-redux'
 import FoodBagServices from '../modules/FoodBagServices'
@@ -19,17 +20,23 @@ const CreateFoodBagForm = () => {
       style={{
         marginTop: '0.5em',
         marginBottom: '0.2em',
-        marginLeft: '0.9em',
+        marginLeft: '0.2em',
       }}
     >
+      <Segment
+      style={{
+        marginTop: '2em',
+        width: 800,
+      }}>
       <Header as='h1'>Create your FoodBag</Header>
       <Icon
         name='shopping bag'
         size='huge'
+        
         style={{
           marginTop: '0.1em',
           marginBottom: '0.2em',
-          marginLeft: '0.9em',
+          marginLeft: '2em',
         }}
       />
       <Form
@@ -37,7 +44,7 @@ const CreateFoodBagForm = () => {
         onSubmit={event => FoodBagServices.create(event, dispatch)}
       >
         <Form.Field />
-        <Form.Field style={{ width: 220 }}>
+        <Form.Field style={{ width: 400 }}>
           <select
             name='pickuptime'
             id='pickuptime'
@@ -58,7 +65,7 @@ const CreateFoodBagForm = () => {
           style={{
             marginTop: '0.5em',
             marginBottom: '0.2em',
-            marginLeft: '1.5em',
+            marginLeft: '6em',
           }}
         >
           <Icon name='heart'></Icon>
@@ -78,11 +85,16 @@ const CreateFoodBagForm = () => {
           </Message>
         )}
         {errorMessage && (
-          <Message color='red' size='big' data-cy='api-response-error-message'>
+          <Message color='red' size='big' data-cy='api-response-error-message'
+          style={{
+            marginTop: '2em',
+            width: 400,
+          }}>
             {errorMessage}
           </Message>
         )}
       </Form>
+      </Segment>
     </Container>
   )
 }
