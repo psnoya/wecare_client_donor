@@ -17,15 +17,13 @@ describe('Donor can register an account', () => {
       response: 'fx:donor_can_register.json',
     })
     cy.visit('/')
-  })
-  it.only('with valid credentials', () => {
+
     cy.get("[data-cy='register-btn']").click()
     cy.get("[data-cy='registration-form']").within(() => {
       cy.get("[data-cy='email']").type('donor@donor.com')
       cy.get("[data-cy='password']").type('123456')
       cy.get("[data-cy='password-confirmation']").type('123456')
       cy.get("[data-cy='submit-btn']").click()
-      cy.get("[data-cy='register-btn']").should('not.be.visible')
     })
   })
 
