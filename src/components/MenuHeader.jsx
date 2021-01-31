@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Button, Image, Menu, Segment } from 'semantic-ui-react'
+import { Image, Menu, Segment } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import RegistrationForm from './RegistrationForm'
 
