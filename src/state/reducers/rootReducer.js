@@ -10,7 +10,7 @@ const rootReducer = (state = initialState, action) => {
     case 'SET_CURRENT_USER':
       return {
         ...state,
-        credentials:true,
+        credentials: true,
         currentUser: action.payload,
       }
     case 'REGISTER_ERROR_MESSAGE':

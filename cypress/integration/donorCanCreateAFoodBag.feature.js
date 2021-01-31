@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 describe('Donor can register an account', () => {
   beforeEach(() => {
     cy.server()
@@ -17,7 +18,6 @@ describe('Donor can register an account', () => {
     })
     cy.visit('/')
   })
-
   it('with valid credentials', () => {
     cy.get("[data-cy='register-btn']").click()
     cy.get("[data-cy='registration-form']").within(() => {
@@ -28,8 +28,9 @@ describe('Donor can register an account', () => {
       cy.get("[data-cy='register-btn']").should('not.be.visible')
     })
   })
-  describe('successfully', () => {
-    it('fills in pickup time 12-16', () => {
+  
+  describe('and successfully create a foodbag', () => {
+    it('by choosing a pickup time 12-16', () => {
       cy.route({
         method: 'POST',
         url: 'http://localhost:3000/api/foodbags',

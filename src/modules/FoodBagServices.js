@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { LOCAL_STORAGE_KEY } from "./Auth";
+import { LOCAL_STORAGE_KEY } from './Auth'
 
 const FoodBagServices = {
   async create(event, dispatch) {

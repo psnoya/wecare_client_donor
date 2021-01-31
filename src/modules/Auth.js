@@ -1,10 +1,9 @@
 import store from '../state/store/configureStore'
-import JtockAuth from 'j-tockauth'
 import axios from 'axios'
 
 const LOCAL_STORAGE_KEY = 'J-tockAuth-Storage'
 
-const signUp = async event => {
+const signUp = async (event) => {
   try {
     event.preventDefault()
     let response = await axios.post('/auth', {
