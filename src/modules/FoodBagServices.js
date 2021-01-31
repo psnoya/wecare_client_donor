@@ -5,7 +5,6 @@ const FoodBagServices = {
   async create(event, dispatch) {
     event.preventDefault()
     const headers = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-    console.log(headers)
     try {
       let response = await axios.post(
         '/foodbags',
