@@ -7,7 +7,13 @@ const MainPageDisplay = () => {
       <Grid.Row>
         <Grid.Column width={3}></Grid.Column>
         <Grid.Column width={10}>
-         <Header as='h1'  textAlign='center'>Welcome to weCare
+         <Header as='h1'  textAlign='center' color='purple'
+         style={{
+          marginTop: '0.1em',
+          marginBottom: '0.2em',
+          marginLeft: '2em',
+        }}
+         >Welcome to weCare
          <Header as='h3'>A place for stores to donate foodbags to single moms</Header>
          </Header>
          
