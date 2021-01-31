@@ -1,10 +1,10 @@
 /* eslint-disable no-undef */
-describe('Donor can create a foodbag', () => {
+describe('Donor can register an account', () => {
   beforeEach(() => {
     cy.server()
     cy.route({
       method: 'POST',
-      url: 'http:localhost:3000/api/auth/sign_in',
+      url: 'http://localhost:3000/api/auth',
       response: 'fx:donor_can_register.json',
       headers: {
         uid: 'donor@donor.com',
@@ -12,13 +12,23 @@ describe('Donor can create a foodbag', () => {
     })
     cy.route({
       method: 'GET',
-      url: 'http://localhost:3000/api/auth/validate_token**',
+      url: 'http://localhost:3000/api/auth/validate_token/**',
+      status: 200,
       response: 'fx:donor_can_register.json',
     })
     cy.visit('/')
-  })
-  describe('successfully', () => {
-    it('fills in pickup time 12-16', () => {
+ 
+    cy.get("[data-cy='register-btn']").click()
+    cy.get("[data-cy='registration-form']").within(() => {
+      cy.get("[data-cy='email']").type('donor@donor.com')
+      cy.get("[data-cy='password']").type('123456')
+      cy.get("[data-cy='password-confirmation']").type('123456')
+      cy.get("[data-cy='submit-btn']").click()
+    })
+  }) 
+  
+  describe('and successfully create a foodbag', () => {
+    it('by choosing a pickup time 12-16', () => {
       cy.route({
         method: 'POST',
         url: 'http://localhost:3000/api/foodbags',

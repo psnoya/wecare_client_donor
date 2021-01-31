@@ -61,6 +61,7 @@ const RegistrationForm = () => {
               data-cy='submit-btn'
               icon
               labelPosition='left'
+              color='purple'
             >
               <Icon name='user'></Icon>
               Submit
