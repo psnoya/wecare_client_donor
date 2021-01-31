@@ -62,6 +62,7 @@ const RegistrationForm = () => {
               data-cy='submit-btn'
               icon
               labelPosition='left'
+              color="purple"
             >
               {selectDonorDashBoard && <DonorDashBoard />}
               <Icon name='user'></Icon>
