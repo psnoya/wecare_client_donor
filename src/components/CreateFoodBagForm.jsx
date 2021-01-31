@@ -13,7 +13,7 @@ import FoodBagServices from '../modules/FoodBagServices'
 
 const CreateFoodBagForm = () => {
   const dispatch = useDispatch()
-  const { createFoodBagMessage, errorMessage } = useSelector(state => state)
+  const { createFoodBagMessage, errorMessage } = useSelector((state) => state)
 
   return (
     <Container
@@ -24,76 +24,80 @@ const CreateFoodBagForm = () => {
       }}
     >
       <Segment
-      style={{
-        marginTop: '2em',
-        width: 800,
-      }}>
-      <Header as='h1'>Create your FoodBag</Header>
-      <Icon
-        name='shopping bag'
-        size='huge'
-        
         style={{
-          marginTop: '0.1em',
-          marginBottom: '0.2em',
-          marginLeft: '2em',
+          marginTop: '2em',
+          width: 800,
         }}
-      />
-      <Form
-        data-cy='foodbag-form'
-        onSubmit={event => FoodBagServices.create(event, dispatch)}
       >
-        <Form.Field />
-        <Form.Field style={{ width: 400 }}>
-          <select
-            name='pickuptime'
-            id='pickuptime'
-            data-cy='pickuptime-dropdown'
-          >
-            <option>Select Pickup Time</option>
-            <option value={0}>08-12</option>
-            <option value={1}>12-16</option>
-            <option value={2}>16-20</option>
-          </select>
-        </Form.Field>
-        <br /> <br />
-        <Button
-          data-cy='submit-btn'
-          type='submit'
-          color='purple'
-          icon='heart'
+        <Header as='h1'>Create your FoodBag</Header>
+        <Icon
+          name='shopping bag'
+          size='huge'
           style={{
-            marginTop: '0.5em',
+            marginTop: '0.1em',
             marginBottom: '0.2em',
-            marginLeft: '6em',
+            marginLeft: '2em',
           }}
+        />
+        <Form
+          data-cy='foodbag-form'
+          onSubmit={(event) => FoodBagServices.create(event, dispatch)}
         >
-          <Icon name='heart'></Icon>
-          Donate
-        </Button>
-        {createFoodBagMessage && (
-          <Message
-            color='green'
-            size='big'
-            data-cy='api-response-success-message'
+          <Form.Field />
+          <Form.Field style={{ width: 400 }}>
+            <select
+              name='pickuptime'
+              id='pickuptime'
+              data-cy='pickuptime-dropdown'
+            >
+              <option>Select Pickup Time</option>
+              <option value={0}>08-12</option>
+              <option value={1}>12-16</option>
+              <option value={2}>16-20</option>
+            </select>
+          </Form.Field>
+          <br /> <br />
+          <Button
+            data-cy='submit-btn'
+            type='submit'
+            color='purple'
+            icon='heart'
             style={{
-              marginTop: '2em',
-              width: 400,
+              marginTop: '0.5em',
+              marginBottom: '0.2em',
+              marginLeft: '6em',
             }}
           >
-            {createFoodBagMessage}
-          </Message>
-        )}
-        {errorMessage && (
-          <Message color='red' size='big' data-cy='api-response-error-message'
-          style={{
-            marginTop: '2em',
-            width: 400,
-          }}>
-            {errorMessage}
-          </Message>
-        )}
-      </Form>
+            <Icon name='heart'></Icon>
+            Donate
+          </Button>
+          {createFoodBagMessage && (
+            <Message
+              color='green'
+              size='big'
+              data-cy='api-response-success-message'
+              style={{
+                marginTop: '2em',
+                width: 400,
+              }}
+            >
+              {createFoodBagMessage}
+            </Message>
+          )}
+          {errorMessage && (
+            <Message
+              color='red'
+              size='big'
+              data-cy='api-response-error-message'
+              style={{
+                marginTop: '2em',
+                width: 400,
+              }}
+            >
+              {errorMessage}
+            </Message>
+          )}
+        </Form>
       </Segment>
     </Container>
   )

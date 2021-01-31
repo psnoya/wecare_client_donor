@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import RegistrationForm from './RegistrationForm'
 
 const MenuHeader = () => {
-  const currentUser = useSelector(state => state.currentUser)
+  const currentUser = useSelector((state) => state.currentUser)
   return (
     <Segment inverted>
       <Menu inverted>
@@ -14,13 +14,6 @@ const MenuHeader = () => {
         </Menu.Item>
         <Menu.Item position='right'>
           {!currentUser && <RegistrationForm />}
-          {currentUser && 
-          <Button 
-          color='violet'
-          >
-            Log out Dummy
-            </Button>
-            }
         </Menu.Item>
       </Menu>
     </Segment>

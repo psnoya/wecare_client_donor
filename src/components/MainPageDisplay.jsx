@@ -15,18 +15,17 @@ const MainPageDisplay = () => {
             }}
           >
             Welcome to weCare
-            </Header>
-            <Header
-              as='h3'
-              color='purple'
-              style={{
-                marginTop: '0.1em',
-                marginBottom: '0.5em',
-              }}
-            >
-              A place where stores can donate foodbags to single moms
-            </Header>
-          
+          </Header>
+          <Header
+            as='h3'
+            color='purple'
+            style={{
+              marginTop: '0.1em',
+              marginBottom: '0.5em',
+            }}
+          >
+            A place where stores can donate foodbags to single moms
+          </Header>
         </Grid.Column>
         <Grid.Column width={3}>
           <Statistic size='small'>
@@ -65,7 +64,6 @@ const MainPageDisplay = () => {
             <br></br>So sign up today, to make a better tomorrow!
           </p>
         </Grid.Column>
-
         <Grid.Column width={3}>
           <Header>In cooperation with</Header>
           <Image src='./img/coop.png' />
