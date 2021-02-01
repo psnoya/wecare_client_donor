@@ -5,6 +5,7 @@ import './index.css'
 import MainPageDisplay from './components/MainPageDisplay'
 import CreateFoodBagForm from './components/CreateFoodBagForm'
 import { useSelector } from 'react-redux'
+import ProfileForm from './components/ProfileForm'
 
 const App = () => {
   const currentUser = useSelector(state => state.currentUser)
@@ -14,6 +15,7 @@ const App = () => {
       <Suspense fallback={<h3>Loading...</h3>}>
         <MenuHeader />
         {currentUser ? <CreateFoodBagForm /> : <MainPageDisplay />}
+        <ProfileForm />
         <Footer />
       </Suspense>
     </>

@@ -2,14 +2,15 @@ import axios from 'axios'
 
 const ProfileServices = {
   async create(event, dispatch) {
+    debugger
     event.preventDefault()
     let headers = JSON.parse(localStorage.getItem('J-tockAuth-Storage'))
+    debugger
     let response = await axios.post(
       'api/user/:id',
-
       {
         user: {
-          company_name: event.target.company_name.value,
+          companyName: event.target.companyName.value,
           adress: event.target.adress.value,
           zipcode: event.target.zipcode.value,
           city: event.target.city.value,

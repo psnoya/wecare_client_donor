@@ -17,7 +17,7 @@ const MenuHeader = () => {
           {!currentUser && <RegistrationForm />}
         </Menu.Item>
         <button>
-          { <ProfileForm />}
+          {!currentUser && <ProfileForm />}
           Button
         </button>
       </Menu>

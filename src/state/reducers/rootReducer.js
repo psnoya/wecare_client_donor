@@ -30,6 +30,11 @@ const rootReducer = (state = initialState, action) => {
         errorMessage: action.payload,
         createFoodBagMessage: '',
       }
+      case 'SET_PROFILE_MESSAGE':
+        return {
+          ...state,
+          updateProfileMessage: action.payload, 
+        }
 
     default:
       return state
