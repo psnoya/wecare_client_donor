@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { Image, Menu, Segment } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import RegistrationForm from './RegistrationForm'
+import ProfileForm from './ProfileForm'
 
 const MenuHeader = () => {
   const currentUser = useSelector((state) => state.currentUser)
@@ -15,6 +16,10 @@ const MenuHeader = () => {
         <Menu.Item position='right'>
           {!currentUser && <RegistrationForm />}
         </Menu.Item>
+        <button>
+          { <ProfileForm />}
+          Button
+        </button>
       </Menu>
     </Segment>
   )
