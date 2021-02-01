@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "data": {
+    "id": 852,
+    "company_name": "Netto",
+    "adress": "Bananvägen 15",
+    "zipcode": "12345",
+    "city": "Gothenburg",
+    "role": "donor"
+  }
+}
