@@ -1,8 +1,13 @@
 import React from 'react'
 import { Grid, Header, Image, Statistic, Icon } from 'semantic-ui-react'
+import { useSelector } from 'react-redux'
+import {Redirect} from 'react-router-dom'
 
 const MainPageDisplay = () => {
+  const credentials = useSelector(state => state.credentials)
   return (
+    <>
+      {credentials ==true && <Redirect to="/foodbags"/>}
     <Grid celled='internally'>
       <Grid.Row>
         <Grid.Column width={3}></Grid.Column>
@@ -73,7 +78,8 @@ const MainPageDisplay = () => {
           <Image src='./img/willys.png' />
         </Grid.Column>
       </Grid.Row>
-    </Grid>
+      </Grid>
+    </>
   )
 }
 
