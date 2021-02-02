@@ -5,7 +5,6 @@ const ProfileServices = {
   async update(event, currentUser, dispatch) {
     event.preventDefault()
     const headers = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-    debugger
     let response = await axios.put(
       `/user/${currentUser.id}`,
       {
@@ -18,7 +17,6 @@ const ProfileServices = {
         headers: headers,
       }
     )
-    debugger
     event.target.reset()
     if (response.status === 200) {
       dispatch({
