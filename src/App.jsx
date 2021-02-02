@@ -8,7 +8,6 @@ import { Switch, Route } from 'react-router-dom'
 import ProfileForm from './components/ProfileForm'
 
 const App = () => {
-  // const currentUser = useSelector((state) => state.currentUser)
 
   return (
     <>
@@ -26,5 +25,3 @@ const App = () => {
 }
 
 export default App
-
-// {currentUser ? <CreateFoodBagForm /> : <MainPageDisplay />}
