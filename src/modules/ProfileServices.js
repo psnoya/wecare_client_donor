@@ -2,34 +2,35 @@ import axios from 'axios'
 import { LOCAL_STORAGE_KEY } from './Auth'
 
 const ProfileServices = {
-  async update(event, dispatch) {
+  async update(event, currentUser, dispatch) {
     event.preventDefault()
     const headers = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-
+    debugger
     let response = await axios.put(
-      '/user/:id',
+      `/user/${currentUser.id}`,
       {
-        user: {
-          companyName: parseInt(event.target.companyName.value),
-          adress: parseInt(event.target.adress.value),
-          zipcode: parseInt(event.target.zipcode.value),
-          city: parseInt(event.target.city.value)
-        },
+        companyName: event.target.companyName.value,
+        adress: event.target.adress.value,
+        zipcode: event.target.zipcode.value,
+        city: event.target.city.value,
       },
       {
         headers: headers,
       }
     )
+    debugger
     event.target.reset()
-    dispatch({
-      type: 'SET_PROFILE_MESSAGE',
-      payload: response.data.message,
-    })
-  }
+    if (response.status === 200) {
+      dispatch({
+        type: 'SET_PROFILE_MESSAGE',
+        payload: 'Your profile has been successfully updated!',
+      })
+      dispatch({
+        type: 'SET_PROFILE_DATA',
+        payload: response.data.user,
+      })
+    }
+  },
 }
-
-
-
-
 
 export default ProfileServices

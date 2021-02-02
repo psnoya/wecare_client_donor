@@ -20,7 +20,7 @@ describe('Donor can edit profile page information', () => {
     it('with valid credentials', () => {
       cy.route({
         method: 'PUT',
-        url: 'http://localhost:3000/api/user/:id',
+        url: 'http://localhost:3000/api/user/**',
         response: { message: 'Your profile has been successfully updated!' },
       })
       cy.get("[data-cy='register-btn']").click()
@@ -43,6 +43,7 @@ describe('Donor can edit profile page information', () => {
           'Your profile has been successfully updated!'
         )
       })
+      cy.get("[data-cy='back-btn']").contains('Back').click()
     })
   })
 })

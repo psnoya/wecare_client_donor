@@ -7,7 +7,7 @@ const MainPageDisplay = () => {
   const credentials = useSelector(state => state.credentials)
   return (
     <>
-      {credentials ==true && <Redirect to="/foodbags"/>}
+      {credentials ===true && <Redirect to="/foodbags"/>}
     <Grid celled='internally'>
       <Grid.Row>
         <Grid.Column width={3}></Grid.Column>

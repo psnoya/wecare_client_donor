@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector} from 'react-redux'
 import { Form, Button, Input, Message, Container, Segment, Header } from 'semantic-ui-react'
 import ProfileServices from '../modules/ProfileServices'
+import { NavLink } from 'react-router-dom'
 
 const ProfileForm = () => {
  
   const dispatch = useDispatch()
   const updateProfileMessage = useSelector((state) => state.updateProfileMessage)
+  const currentUser = useSelector(state => state.currentUser)
   const [companyName, setCompanyName] = useState()
   const [adress, setAdress] = useState()
   const [zipcode, setZipcode] = useState()
@@ -15,10 +17,14 @@ const ProfileForm = () => {
   return (
     <Container>
       <Segment>
+      <Button data-cy='back-btn' fluid as={NavLink}
+    to={`/foodbags`}>
+      Back
+    </Button>   
         <Header as='h1'>Update your Profile</Header>
     <Form
       data-cy='profile-form'
-      onSubmit={(event) => ProfileServices.update(event, dispatch)}
+      onSubmit={(event) => ProfileServices.update(event, currentUser, dispatch)}
     >
       <Form.Field
         data-cy='company-name'

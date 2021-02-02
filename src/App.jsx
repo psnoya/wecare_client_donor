@@ -4,13 +4,11 @@ import Footer from './components/Footer'
 import './index.css'
 import MainPageDisplay from './components/MainPageDisplay'
 import CreateFoodBagForm from './components/CreateFoodBagForm'
-import { useSelector } from 'react-redux'
 import { Switch, Route } from 'react-router-dom'
 import ProfileForm from './components/ProfileForm'
 
 const App = () => {
-  const currentUser = useSelector((state) => state.currentUser)
-  const showProfile = useSelector((state) => state.showProfile)
+  // const currentUser = useSelector((state) => state.currentUser)
 
   return (
     <>
@@ -18,7 +16,7 @@ const App = () => {
         <MenuHeader />
         <Switch>
           <Route exact path="/" component={MainPageDisplay}></Route>
-          <Route exact path="/foodbag" component={CreateFoodBagForm}></Route>
+          <Route exact path="/foodbags" component={CreateFoodBagForm}></Route>
           <Route exact path="/profile" component={ProfileForm}></Route>
         </Switch>
         <Footer />
@@ -29,7 +27,4 @@ const App = () => {
 
 export default App
 
-// {showProfile == true ? <ProfileForm /> : <MainPageDisplay />}
-//         {currentUser && showProfile == false && <CreateFoodBagForm />}
-//         <ProfileForm />
-//         {currentUser ? <CreateFoodBagForm /> : <MainPageDisplay />}
+// {currentUser ? <CreateFoodBagForm /> : <MainPageDisplay />}

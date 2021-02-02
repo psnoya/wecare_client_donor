@@ -35,6 +35,14 @@ const rootReducer = (state = initialState, action) => {
           ...state,
           updateProfileMessage: action.payload, 
         }
+    
+    case 'SET_PROFILE_DATA':
+      return {
+        ...state,
+        profile: action.payload
+      }
+      
+        
 
     default:
       return state
