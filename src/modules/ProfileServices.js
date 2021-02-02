@@ -7,9 +7,14 @@ const ProfileServices = {
     const headers = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
 
     let response = await axios.put(
-      '/user/:id',
+      '/user/id',
       {
-        user: { companyName: parseInt(event.target.companyName.value) },
+        user: {
+          companyName: parseInt(event.target.companyName.value),
+          adress: parseInt(event.target.adress.value),
+          zipcode: parseInt(event.target.zipcode.value),
+          city: parseInt(event.target.city.value)
+        },
       },
       {
         headers: headers,
