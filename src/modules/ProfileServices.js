@@ -1,26 +1,23 @@
 import axios from 'axios'
+import { LOCAL_STORAGE_KEY } from './Auth'
 
 const ProfileServices = {
   async create(event, dispatch) {
     debugger
     event.preventDefault()
-    let headers = JSON.parse(localStorage.getItem('J-tockAuth-Storage'))
+    const headers = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
     debugger
     let response = await axios.post(
-      'api/user/:id',
+      '/user/:id',
       {
-        user: {
-          companyName: event.target.companyName.value,
-          adress: event.target.adress.value,
-          zipcode: event.target.zipcode.value,
-          city: event.target.city.value,
-        },
+        user: { companyName: parseInt(event.target.companyName.value) },
+        
       },
       {
         headers: headers,
       }
     )
-    event.target.save()
+    event.target.reset()
     dispatch({
       type: 'SET_PROFILE_MESSAGE',
       payload: response.data.message,
