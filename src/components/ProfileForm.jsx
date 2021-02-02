@@ -26,7 +26,7 @@ const ProfileForm = () => {
         data-cy='company-name'
         label='Company Name'
         control={Input}
-        name='companyName'
+        name='company_name'
         placeholder='Company Name'
       />
       <Form.Field

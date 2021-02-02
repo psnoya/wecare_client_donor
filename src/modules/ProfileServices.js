@@ -9,7 +9,7 @@ const ProfileServices = {
     let response = await axios.put(
       `/user/${currentUser.id}`,
       {
-        companyName: event.target.companyName.value,
+        company_name: event.target.company_name.value,
         adress: event.target.adress.value,
         zipcode: event.target.zipcode.value,
         city: event.target.city.value,
