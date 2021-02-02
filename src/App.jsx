@@ -4,16 +4,20 @@ import Footer from './components/Footer'
 import './index.css'
 import MainPageDisplay from './components/MainPageDisplay'
 import CreateFoodBagForm from './components/CreateFoodBagForm'
-import { useSelector } from 'react-redux'
+import { Switch, Route } from 'react-router-dom'
+import ProfileForm from './components/ProfileForm'
 
 const App = () => {
-  const currentUser = useSelector(state => state.currentUser)
 
   return (
     <>
       <Suspense fallback={<h3>Loading...</h3>}>
         <MenuHeader />
-        {currentUser ? <CreateFoodBagForm /> : <MainPageDisplay />}
+        <Switch>
+          <Route exact path="/" component={MainPageDisplay}></Route>
+          <Route exact path="/foodbags" component={CreateFoodBagForm}></Route>
+          <Route exact path="/profile" component={ProfileForm}></Route>
+        </Switch>
         <Footer />
       </Suspense>
     </>
