@@ -28,7 +28,7 @@ describe('Donor can edit profile page information', () => {
         cy.get("[data-cy='email']").type('donor@donor.com')
         cy.get("[data-cy='password']").type('123456')
         cy.get("[data-cy='password-confirmation']").type('123456')
-        cy.get("[data-cy='save-btn']").click()
+        cy.get("[data-cy='submit-btn']").click()
       })
 
       cy.get("[data-cy='edit-profile-btn']").click()
