@@ -1,6 +1,6 @@
 import initialState from '../store/initialState'
 
-const rootReducer = (state = initialState, action) => {
+const rootReducer = (state =  initialState, action) => {
   switch (action.type) {
     case 'REGISTRATION_FORM':
       return {

@@ -37,6 +37,7 @@ describe('Donor can edit profile page information', () => {
         cy.get("[data-cy='adress']").type('Bananvägen 15')
         cy.get("[data-cy='zipcode']").type('12345')
         cy.get("[data-cy='city']").type('Gothenburg')
+        cy.get("[data-cy='image']").attachFile("image.png")
         cy.get("[data-cy='submit-btn']").contains('Save').click()
         cy.get("[data-cy='response-success-message']").should(
           'contain',
