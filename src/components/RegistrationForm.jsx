@@ -6,7 +6,7 @@ import { signUp } from '../modules/Auth'
 const RegistrationForm = () => {
   const dispatch = useDispatch()
   const { registerErrorMessage, currentUser, openModal } = useSelector(
-    (state) => state
+    state => state
   )
 
   return (
@@ -21,17 +21,21 @@ const RegistrationForm = () => {
         }
         open={openModal}
         trigger={
-          <Button data-cy='register-btn' primary  style={{
-            backgroundColor: "#8FBC8F",
-            color:'white'
-          }}>
+          <Button
+            data-cy='register-btn'
+            primary
+            style={{
+              backgroundColor: '#8FBC8F',
+              color: 'white',
+            }}
+          >
             Register Here
           </Button>
         }
       >
         <Modal.Header>Register Account</Modal.Header>
         <Modal.Content>
-          <Form data-cy='registration-form' onSubmit={(e) => signUp(e)}>
+          <Form data-cy='registration-form' onSubmit={e => signUp(e)}>
             <Form.Input
               name='email'
               data-cy='email'
@@ -64,7 +68,10 @@ const RegistrationForm = () => {
               data-cy='submit-btn'
               icon
               labelPosition='left'
-              color='purple'
+              style={{
+                backgroundColor: '#8FBC8F',
+                color: 'white',
+              }}
             >
               <Icon name='user'></Icon>
               Submit

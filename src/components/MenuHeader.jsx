@@ -12,10 +12,6 @@ const MenuHeader = () => {
       <Menu inverted 
        style={{
         backgroundColor: "#9370DB",
-        // borderColor: "lightgrey",
-        // borderRadius: "5px",
-        // boxShadow: "0 0 3px 2px grey",
-        
       }}>
         <Menu.Item as={Link} to={{ pathname: '/' }}>
           <Image src='./img/logo_wecare.png' size='medium' />
