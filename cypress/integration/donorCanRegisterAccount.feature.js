@@ -34,7 +34,7 @@ describe('Donor can register an account', () => {
         url: 'http://localhost:3000/api/auth',
         status: '401',
         response: {
-          errors: {
+          error: {
             full_messages: ['Invalid login credentials. Please try again.'],
           },
           success: false,
@@ -59,7 +59,7 @@ describe('Donor can register an account', () => {
         url: 'http://localhost:3000/api/auth',
         status: '401',
         response: {
-          errors: {
+          error: {
             full_messages: ['Wrong password, please try again'],
           },
           success: false,
