@@ -1,6 +1,6 @@
 import initialState from '../store/initialState'
 
-const rootReducer = (state =  initialState, action) => {
+const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'REGISTRATION_FORM':
       return {
@@ -30,20 +30,17 @@ const rootReducer = (state =  initialState, action) => {
         errorMessage: action.payload,
         createFoodBagMessage: '',
       }
-      case 'SET_PROFILE_MESSAGE':
-        return {
-          ...state,
-          updateProfileMessage: action.payload, 
-        }
-    
+    case 'SET_PROFILE_MESSAGE':
+      return {
+        ...state,
+        updateProfileMessage: action.payload,
+      }
+
     case 'SET_PROFILE_DATA':
       return {
         ...state,
-        profile: action.payload
+        profile: action.payload,
       }
-      
-        
-
     default:
       return state
   }
