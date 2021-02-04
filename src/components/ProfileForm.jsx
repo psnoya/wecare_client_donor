@@ -64,15 +64,16 @@ const ProfileForm = () => {
             placeholder='Logo Image'
             type='file'
           />
-          <Button 
-          data-cy='submit-btn' 
-          type='save' 
-          value='save'
-          size='large'
+          <Button
+            data-cy='submit-btn'
+            type='save'
+            value='save'
+            size='large'
             style={{
               backgroundColor: '#6699FF',
               color: 'white',
-            }}>
+            }}
+          >
             Save
           </Button>
           {updateProfileMessage && (
