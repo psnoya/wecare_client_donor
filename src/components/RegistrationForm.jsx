@@ -21,7 +21,10 @@ const RegistrationForm = () => {
         }
         open={openModal}
         trigger={
-          <Button data-cy='register-btn' size='huge' color='purple'>
+          <Button data-cy='register-btn' primary  style={{
+            backgroundColor: "#8FBC8F",
+            color:'white'
+          }}>
             Register Here
           </Button>
         }
@@ -34,7 +37,7 @@ const RegistrationForm = () => {
               data-cy='email'
               icon='at'
               type='text'
-              label='email'
+              label='Enter your Email'
               placeholder='Your email'
               iconPosition='left'
             />
@@ -43,7 +46,7 @@ const RegistrationForm = () => {
               data-cy='password'
               icon='key'
               type='password'
-              label='password'
+              label='Password'
               placeholder='Your password'
               iconPosition='left'
             />
@@ -52,7 +55,7 @@ const RegistrationForm = () => {
               data-cy='password-confirmation'
               icon='key'
               type='password'
-              label='password-confirmation'
+              label='Password confirmation'
               placeholder='Confirm your password'
               iconPosition='left'
             />

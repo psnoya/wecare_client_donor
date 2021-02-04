@@ -71,11 +71,9 @@ const MainPageDisplay = () => {
         </Grid.Column>
         <Grid.Column width={3}>
           <Header>In cooperation with</Header>
-          <Image src='./img/coop.png' />
-          <Image src='./img/hemkop.png' />
-          <Image src='./img/ica.png' />
-          <Image src='./img/lidl.png' />
-          <Image src='./img/willys.png' />
+          <Image src='./img/donor1.png' size='medium' circular/>
+          <Image src='./img/donor2.png' size='medium' circular/>
+          <Image src='./img/donor3.png' size='medium' circular/>
         </Grid.Column>
       </Grid.Row>
       </Grid>

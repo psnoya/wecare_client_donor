@@ -8,10 +8,17 @@ import { NavLink } from 'react-router-dom'
 const MenuHeader = () => {
   const currentUser = useSelector((state) => state.currentUser)
   return (
-    <Segment inverted>
-      <Menu inverted>
+    // <Segment inverted>
+      <Menu inverted 
+       style={{
+        backgroundColor: "#9370DB",
+        // borderColor: "lightgrey",
+        // borderRadius: "5px",
+        // boxShadow: "0 0 3px 2px grey",
+        
+      }}>
         <Menu.Item as={Link} to={{ pathname: '/' }}>
-          <Image src='./img/wecare_logo.png' size='medium' />
+          <Image src='./img/logo_wecare.png' size='medium' />
         </Menu.Item>
         {currentUser && (<Menu.Item>
           <Button data-cy='edit-profile-btn' fluid as={NavLink} to={`/profile`}>
@@ -23,7 +30,7 @@ const MenuHeader = () => {
           {!currentUser && <RegistrationForm />}
         </Menu.Item>
       </Menu>
-    </Segment>
+    // </Segment>
   )
 }
 
