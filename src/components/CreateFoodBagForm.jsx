@@ -37,6 +37,7 @@ const CreateFoodBagForm = () => {
             marginTop: '0.1em',
             marginBottom: '0.2em',
             marginLeft: '2em',
+            color: '#9370db'
           }}
         />
         <Form
@@ -60,12 +61,14 @@ const CreateFoodBagForm = () => {
           <Button
             data-cy='submit-btn'
             type='submit'
-            color='purple'
             icon='heart'
+            size='huge'
             style={{
               marginTop: '0.5em',
               marginBottom: '0.2em',
-              marginLeft: '6em',
+              marginLeft: '3em',
+              backgroundColor: '#6699FF',
+              color: 'white',
             }}
           >
             <Icon name='heart'></Icon>
