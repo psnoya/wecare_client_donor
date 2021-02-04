@@ -10,18 +10,17 @@ const ProfileForm = () => {
   const updateProfileMessage = useSelector((state) => state.updateProfileMessage)
   const currentUser = useSelector(state => state.currentUser)
 
-  const toBase64 = (file) => new Promise((resolve, reject) => {
-    const reader = new FileReader()
-    reader.readAsDataURL(file)
-    reader.onload = () => resolve(reader.result)
-    reader.onerror = () => reject(reader.error)
-  })
-  debugger
-  let encodedImage
-  if (e.target.image.files[0]) {
-    encodedImage = toBase64(e.target.image.files[0])
-  }
-  debugger
+  // const toBase64 = (file) => new Promise((resolve, reject) => {
+  //   const reader = new FileReader()
+  //   reader.readAsDataURL(file)
+  //   reader.onload = () => resolve(reader.result)
+  //   reader.onerror = () => reject(reader.error)
+  // })
+
+  // let encodedImage
+  // if (event.target.image.files[0]) {
+  //   encodedImage = toBase64(event.target.image.files[0])
+  // }
   return (
     <Container>
       <Segment>
@@ -29,7 +28,7 @@ const ProfileForm = () => {
           to={`/foodbags`}>
           Back
     </Button>
-        <Header as='h1'>Update your Profile</Header>
+        <Header as='h3'>Update your Profile</Header>
         <Form
           data-cy='profile-form'
           onSubmit={(event) => ProfileServices.update(event, currentUser, dispatch)}
