@@ -22,7 +22,7 @@ const ProfileForm = () => {
   //   encodedImage = toBase64(event.target.image.files[0])
   // }
   return (
-    <Container>
+    <Container style={{ paddingBottom: 80 }}>
       <Segment>
         <Button data-cy='back-btn' fluid as={NavLink}
           to={`/foodbags`}>

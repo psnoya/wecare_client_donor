@@ -7,9 +7,9 @@ const ProfileServices = {
     event.preventDefault()
 
     let headers = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-      let encodedImage
-      if (event.target.file_input.files[0]) {
-        encodedImage = await toBase64(event.target.file_input.files[0])
+    let encodedImage
+      if (event.target.image.files[0]) {
+        encodedImage = await toBase64(event.target.image.files[0])
       }
     
       let response = await axios.put(
