@@ -1,5 +1,14 @@
 import React from 'react'
-import { Grid, Header, Image, Statistic, Icon } from 'semantic-ui-react'
+import {
+  Advertisement,
+  Container,
+  Grid,
+  Header,
+  Image,
+  Segment,
+  Statistic,
+  Icon,
+} from 'semantic-ui-react'
 import { useSelector } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
@@ -8,35 +17,29 @@ const MainPageDisplay = () => {
   return (
     <>
       {credentials === true && <Redirect to='/foodbags' />}
-      <Grid>
-        <Grid.Row>
-          <Grid.Column width={12}>
-            <Header
-              as='h1'
-              style={{
-                marginTop: '0.1em',
-                marginBottom: '0.5em',
-                marginLeft: '1.5em',
-              }}
-            >
-              Welcome to weCare
-            </Header>
-            <Header
-              as='h3'
-              style={{
-                marginLeft: '2em',
-              }}
-            >
-              Sign up today to make a better tomorrow!
-            </Header>
-            <Grid.Column
-              width={12}
-              style={{
-                marginTop: '0.1em',
-                marginBottom: '0.5em',
-                marginLeft: '2.5em',
-              }}
-            >
+      <Container>
+        <Grid divided='vertically'>
+          <Grid.Row columns={2}>
+            <Grid.Column width={13}>
+              <Header
+                as='h1'
+                style={{
+                  marginTop: '0.1em',
+                  marginBottom: '0.5em',
+                  marginLeft: '1.5em',
+                }}
+              >
+                Welcome to weCare
+              </Header>
+              <Header
+                as='h3'
+                style={{
+                  marginLeft: '2em',
+                  marginBottom: '0.5em',
+                }}
+              >
+                Sign up today to make a better tomorrow!
+              </Header>
               <p>
                 Every year more than 100 000 tons of food is wasted in stores
                 all over Sweden. At the same time there are parants who don’t
@@ -60,15 +63,31 @@ const MainPageDisplay = () => {
                 <br></br>
                 <br></br>So sign up today, to make a better tomorrow!
               </p>
-          <Header>In cooperation with</Header>
-          <Image src='./img/donor1.png' />
-          <Image src='./img/donor2.png' />
-          <Image src='./img/donor3.png' />
             </Grid.Column>
-          </Grid.Column>
-          <Grid.Column width={4}></Grid.Column>
-        </Grid.Row>
-      </Grid>
+
+            <Grid.Column width={3}>
+              {/* <Segment clearing style={{
+                    size: '0.1em',
+
+                    marginRight: '2.5em',
+                  }}> */}
+              <Header
+                floated='right'
+                style={{
+                  marginTop: '0.5em',
+                  marginRight: '2.5em',
+                }}
+              >
+                Our Partners
+              </Header>
+              <Image src='./img/donor1.png' />
+              <Image src='./img/donor2.png' />
+              <Image src='./img/donor3.png' />
+              {/* </Segment> */}
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Container>
     </>
     // <>
     //   {credentials === true && <Redirect to='/foodbags' />}
