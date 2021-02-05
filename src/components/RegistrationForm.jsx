@@ -23,7 +23,7 @@ const RegistrationForm = () => {
         trigger={
           <Button
             data-cy='register-btn'
-            primary
+            size='big'
             style={{
               backgroundColor: '#8FBC8F',
               color: 'white',

@@ -14,8 +14,8 @@ const MenuHeader = () => {
         backgroundColor: '#9370DB',
       }}
     >
-      <Menu.Item as={Link} to={{ pathname: '/' }}>
-        <Image src='./img/logo_wecare.png' size='medium' />
+      <Menu.Item>
+        <Image src='./img/heart_logo.png' size='medium' />
       </Menu.Item>
       {currentUser && (
         <Menu.Item>
@@ -32,6 +32,7 @@ const MenuHeader = () => {
       <Menu.Item position='right'>
         {!currentUser && <RegistrationForm />}
       </Menu.Item>
+      <Menu.Item>  <Image src='./img/purple.png' size='mini' /> </Menu.Item>
     </Menu>
   )
 }
