@@ -71,14 +71,14 @@ const MainPageDisplay = () => {
 
                     marginRight: '2.5em',
                   }}> */}
-              <Header
+              <Header as='h4'
                 floated='right'
                 style={{
                   marginTop: '0.5em',
-                  marginRight: '2.5em',
+                  marginRight: '2.3em',
                 }}
               >
-                Our Partners
+                FOOD PARTNERS
               </Header>
               <Image src='./img/donor1.png' />
               <Image src='./img/donor2.png' />
